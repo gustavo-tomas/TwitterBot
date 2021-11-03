@@ -25,19 +25,21 @@ def set_last_seen_id(last_seen_id, file):
   f_write.close()
   return
 
+# TODO: finish status update
 def reply_to_krismas():
-  print('Replying to krismas')
+  print('Looking for krismas...')
   last_seen_id = get_last_seen_id(LAST_SEEN)
-  mentions = api.mentions_timeline()
+  mentions = api.mentions_timeline(since_id=last_seen_id)
 
   for mention in reversed(mentions):
-    print(str(mention.id) + ' - ' + mention.full_text)
+    print(str(mention.id) + ' - ' + mention.text)
     last_seen_id = mention.id
     set_last_seen_id(last_seen_id, LAST_SEEN)
-    if '#krismas?' in mention.full_text.lower():
-      print('responding')
-      api.update_status('@' + mention.user.screen_name + 'Testing', mention.id)
+    if '#krismas' in mention.text.lower():
+      print('responding to ' + mention.user.screen_name)
+      status = '@' + mention.user.screen_name + ' '
+      api.update_status(status, in_reply_to_status_id=mention.id)
 
 while True:
   reply_to_krismas()
-  time.sleep(1)
+  time.sleep(15)
