@@ -46,6 +46,8 @@ def reply_to_krismas():
       api.update_status(status, in_reply_to_status_id=tweet.id)
       print('responded to ' + tweet.user.screen_name)
 
-while True:
-  reply_to_krismas()
-  time.sleep(15)
+def run():
+  while True:
+    reply_to_krismas()
+    time.sleep(15)
+  return
