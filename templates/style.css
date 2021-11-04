@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+/* font-family: 'Dancing Script', cursive; */
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(245, 240, 220);
+}
+
+#intro {
+  text-align: center;
+  width: 70vw;
+}
+
+#description {
+  background-color: rgb(164, 255, 164);
+  border-radius: 10px;
+}
+
+#krismas {
+  color: rgb(245, 38, 38);
+}
