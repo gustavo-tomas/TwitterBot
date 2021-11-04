@@ -104,7 +104,6 @@ threadpoolctl==2.1.0
 tqdm==4.60.0
 traitlets==5.0.5
 tweepy==4.2.0
-ufw==0.36
 unattended-upgrades==0.1
 uritemplate==0.6
 urllib3==1.25.8
