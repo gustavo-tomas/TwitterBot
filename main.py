@@ -1,5 +1,6 @@
 import tweepy
 import time
+import datetime
 from decouple import config
 
 CONSUMER_KEY=config('CONSUMER_KEY')
@@ -25,19 +26,22 @@ def set_last_seen_id(last_seen_id, file):
   f_write.close()
   return
 
-# TODO: finish status update
 def reply_to_krismas():
   print('Looking for krismas...')
   last_seen_id = get_last_seen_id(LAST_SEEN)
   mentions = api.mentions_timeline(since_id=last_seen_id)
 
   for mention in reversed(mentions):
-    print(str(mention.id) + ' - ' + mention.text)
+    today = mention.created_at.date()
+    krismas = datetime.date(today.year, 12, 25)
+    days_left = krismas - today
+    print(str(mention.id) + ' - ' + mention.text + ' - ' + str(today))
+    
     last_seen_id = mention.id
     set_last_seen_id(last_seen_id, LAST_SEEN)
     if '#krismas' in mention.text.lower():
       print('responding to ' + mention.user.screen_name)
-      status = '@' + mention.user.screen_name + ' '
+      status = '@' + mention.user.screen_name + ' ' + str(days_left.days) + ' days till krismas \U0001F563'
       api.update_status(status, in_reply_to_status_id=mention.id)
 
 while True:
