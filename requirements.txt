@@ -82,7 +82,6 @@ pyparsing==2.4.7
 pyRFC3339==1.1
 python-crfsuite==0.9.7
 python-dateutil==2.7.3
-python-debian===0.1.36ubuntu1
 python-decouple==3.5
 python-dotenv==0.19.1
 pytz==2019.3
