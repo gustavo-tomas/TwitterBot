@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  background-color: rgb(245, 240, 220);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 5px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(49, 49, 240);
+}
+
+#subtitle {
+  margin-bottom: 20px;
+}
+
+#intro {
+  text-align: center;
+  width: 70vw;
+}
+
+#description {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#merry {
+  font-size: 48px;
+  font-family: 'Dancing Script', cursive;
+  color: brown;
+  margin-bottom: 30px;
+}
+
+.answer {
+  margin-bottom: 10px;
+}
+
+.krismas {
+  color: rgb(245, 38, 38);
+}
